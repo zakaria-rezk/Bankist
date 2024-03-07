@@ -27,8 +27,8 @@ const account3 = {
 };
 
 const account4 = {
-  owner: 'Sarah Smith',
-  movements: [430, 1000, 700, 50, 90],
+  owner: 'Elia Rezk',
+  movements: [1000300, -20, 50, 400, -460],
   interestRate: 1,
   pin: 4444,
 };
@@ -65,6 +65,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 // methods
 let currentaccount;
 
+ alert('user::er \npin::4444')
 //create user name m
 const createuser = function(accs){
   accs.forEach( function(user) {
@@ -135,7 +136,7 @@ const sumin=function(currentaccount){
 }
 const sumout=function(currentaccount){
   const negativenum =currentaccount.movements.filter(num => num < 0);
-  console.log(negativenum);
+ 
   let sub = negativenum.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
   labelSumOut.textContent =sub;
 
@@ -180,7 +181,7 @@ btnLogin.addEventListener('click',function(e){
  currentaccount.movements.push(Number(-amount));
  // add value to account
  // inputTransferTo
- const luckyperson =accounts.find(curr => inputTransferTo.value === curr.username);
+ const luckyperson =account1;
 //  console.log(currentaccount.movements);
  luckyperson.movements.push(amount);
  console.log(currentaccount + "transfer")
@@ -193,6 +194,7 @@ containerMovements.insertAdjacentHTML('afterbegin',html);
 
 inputTransferAmount.value='';
 inputTransferTo.value ='';
+sumout(currentaccount)
 
  });
 
